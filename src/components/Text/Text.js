@@ -6,13 +6,21 @@ import style from './Text.module.css';
 const Text = ({element, children, className, strong, italic, disabled}) => {
   return React.createElement(element,
     {
-      className: cn(className, {[style.strong]: strong}, {[style.italic]: italic}, {[style.disabled]: disabled}, style.root),
+      className: cn(
+        className,
+        style.root,
+        {
+          [style.strong]: strong,
+          [style.italic]: italic,
+          [style.disabled]: disabled,
+        }
+      ),
     },
     children);
 };
 
 Text.propTypes = {
-  element: Proptypes.oneOf(['div', 'p', 'span']).isRequired,
+  element: Proptypes.oneOf(['div', 'p', 'span']),
   children: Proptypes.node,
   className: Proptypes.string,
   strong: Proptypes.bool,
