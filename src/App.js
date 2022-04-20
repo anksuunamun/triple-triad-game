@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import Slider from "./components/Slider";
 import Footer from "./components/Footer";
@@ -5,7 +6,6 @@ import Container from "./components/Container";
 import Heading from "./components/Heading";
 import style from './App.module.scss';
 import CharacterCard from "./components/CharacterCard";
-import { useState } from "react";
 
 const CHARACTERS = [
   {
