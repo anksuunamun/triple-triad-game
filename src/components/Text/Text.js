@@ -30,6 +30,9 @@ Text.propTypes = {
 
 Text.defaultProps = {
   element: 'div',
+  strong: false,
+  italic: false,
+  disabled: false,
 }
 
 export default Text;
