@@ -78,8 +78,8 @@ function App() {
   const [selectedCharacterId, setSelectedCharacterId] = useState(null);
 
   const handleLikeClick = (characterId) => {
-    setCharacters((prevCharacters) => {
-      return prevCharacters.map(character => {
+    setCharacters((prevCharacters) =>
+      prevCharacters.map(character => {
           return (character.id === characterId)
             ? {
               ...character,
@@ -88,7 +88,7 @@ function App() {
             : character
         }
       )
-    });
+    );
   };
 
   const handleSelectCharacter = (id) => {
@@ -125,7 +125,7 @@ function App() {
                 humanName={character.humanName}
                 isLike={character.isLike}
                 onLikeClick={handleLikeClick}
-                onCharacterSelect={handleSelectCharacter}
+                onReadBioClick={handleSelectCharacter}
               />
             ))}
           </div>

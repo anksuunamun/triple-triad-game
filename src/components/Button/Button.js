@@ -11,15 +11,14 @@ const Button = ({
 }) => {
   return (
     <button
-      {...{
-        className: cn(
-          style.root,
-          style[theme],
-          className,
-        ),
-        onClick,
-        ...rest,
-      }}>
+      className={cn(
+        style.root,
+        style[theme],
+        className,
+      )}
+      onClick={onClick}
+      {...rest}
+    >
       {children}
     </button>
   )
