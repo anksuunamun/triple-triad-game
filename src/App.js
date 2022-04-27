@@ -6,6 +6,8 @@ import Container from "./components/Container";
 import Heading from "./components/Heading";
 import style from './App.module.scss';
 import CharacterCard from "./components/CharacterCard";
+import Biography from "./pages/Biography";
+import Button from "./components/Button";
 
 const CHARACTERS = [
   {
@@ -73,10 +75,11 @@ const CHARACTERS = [
 function App() {
 
   const [characters, setCharacters] = useState(CHARACTERS);
+  const [selectedCharacterId, setSelectedCharacterId] = useState(null);
 
   const handleLikeClick = (characterId) => {
-    setCharacters((prevCharacters) => {
-      return prevCharacters.map(character => {
+    setCharacters((prevCharacters) =>
+      prevCharacters.map(character => {
           return (character.id === characterId)
             ? {
               ...character,
@@ -85,12 +88,25 @@ function App() {
             : character
         }
       )
-    });
+    );
   };
 
-  return (
-    <>
-      <Header/>
+  const handleSelectCharacter = (id) => {
+    setSelectedCharacterId(id);
+  };
+
+  const handleBackClick = () => {
+    setSelectedCharacterId(null);
+  };
+
+  const content = selectedCharacterId
+    ? (
+      <div className={style.biographySection}>
+        <Button theme="dark" onClick={handleBackClick}>Go Back</Button>
+        <Biography id={selectedCharacterId}/>
+      </div>
+    )
+    : <>
       <Slider/>
       <div className={style.cardSection}>
         <Container>
@@ -109,11 +125,18 @@ function App() {
                 humanName={character.humanName}
                 isLike={character.isLike}
                 onLikeClick={handleLikeClick}
+                onReadBioClick={handleSelectCharacter}
               />
             ))}
           </div>
         </Container>
       </div>
+    </>
+
+  return (
+    <>
+      <Header/>
+      {content}
       <Footer/>
     </>
   );

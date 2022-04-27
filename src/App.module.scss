@@ -61,3 +61,12 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 15px;
 }
+
+.biographySection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px 0;
+  background: #f7f7f7;
+  align-items: center;
+}

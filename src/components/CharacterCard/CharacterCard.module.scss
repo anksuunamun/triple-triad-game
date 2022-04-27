@@ -110,4 +110,11 @@
 }
 
 .readBio {
+  text-decoration: underline;
+  color: rebeccapurple;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.7;
+  }
 }
