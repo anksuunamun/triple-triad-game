@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  padding: 24px 20px;
+  margin: 0 auto;
+
+  .about {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 40px;
+  }
+
+  .aboutItem {
+    & div {
+      margin-bottom: 20px;
+    }
+  }
+
+  .photo {
+    max-width: 80%;
+  }
+
+  & .contacts {
+    display: flex;
+    gap: 15px;
+  }
+
+  & .icon {
+    height: 15px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+}

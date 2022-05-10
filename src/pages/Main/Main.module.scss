@@ -1,0 +1,33 @@
+.cardSection {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  background: #f7f7f7;
+}
+
+.cardSection {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  background-color: #f7f7f7;
+}
+
+.cardTitle {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.cardWrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 15px;
+}
+
+.biographySection {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px 0;
+  background: #f7f7f7;
+  align-items: center;
+}

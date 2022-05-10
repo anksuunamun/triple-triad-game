@@ -16,8 +16,8 @@ const CharacterCard = ({
   onReadBioClick,
 }) => {
 
-  const handleLikeClick = () => onLikeClick(id);
-  const handleReadBioClick = () => onReadBioClick(id);
+  const handleLikeClick = () => onLikeClick && onLikeClick(id);
+  const handleReadBioClick = () => onReadBioClick && onReadBioClick(id);
 
   return (
     <div className={style.root}>
