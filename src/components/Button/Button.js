@@ -28,7 +28,7 @@ Button.propTypes = {
   children: Proptypes.node,
   theme: Proptypes.oneOf(['dark', 'white']),
   className: Proptypes.string,
-  onClick: Proptypes.func.isRequired,
+  onClick: Proptypes.func,
 };
 
 Button.defaultProps = {
