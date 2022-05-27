@@ -64,6 +64,10 @@
   text-decoration: initial;
 }
 
+.nav li a.active {
+  color: red;
+}
+
 .header.small .logo {
   width: 89px;
   height: 50px;

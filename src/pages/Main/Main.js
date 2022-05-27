@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Slider from "../../components/Slider";
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
@@ -9,8 +8,6 @@ import { CHARACTERS } from "../../constants/characters";
 
 const Main = () => {
   const [characters, setCharacters] = useState(CHARACTERS);
-
-  const navigate = useNavigate();
 
   const handleLikeClick = (characterId) => {
     setCharacters((prevCharacters) =>
@@ -24,10 +21,6 @@ const Main = () => {
         }
       )
     );
-  };
-
-  const handleSelectCharacter = (id) => {
-    navigate(`/bio/${id}`);
   };
 
   return (
@@ -50,7 +43,6 @@ const Main = () => {
                 humanName={character.humanName}
                 isLike={character.isLike}
                 onLikeClick={handleLikeClick}
-                onReadBioClick={handleSelectCharacter}
               />
             ))}
           </div>

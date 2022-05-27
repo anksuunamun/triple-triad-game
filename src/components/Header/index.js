@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import cn from 'classnames';
 import Container from "../Container";
 import style from './Header.module.scss';
@@ -8,7 +8,7 @@ import logo from '../../assets/logo.png';
 
 const MENU = [
   {path: '/', name: 'Main'},
-  {path: '/bio', name: 'Characters'},
+  {path: '/characters', name: 'Characters'},
   {path: '/about', name: 'About'},
   {path: '/contacts', name: 'Contacts'},
 ];
@@ -43,9 +43,16 @@ const Header = () => {
             <img src={logo} alt="Logo" className={style.logo}/>
           </div>
           <ul className={style.nav}>
-            {MENU.map((item) =>
-              <li key={item.name}>
-                <Link to={item.path}>{item.name}</Link>
+            {MENU.map(({name, path}) =>
+              <li key={name}>
+                <NavLink
+                  to={path}
+                  className={({isActive}) =>
+                    cn({[style.active]: isActive})
+                  }
+                >
+                  {name}
+                </NavLink>
               </li>
             )}
           </ul>

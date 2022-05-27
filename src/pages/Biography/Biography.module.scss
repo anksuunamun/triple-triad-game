@@ -6,6 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin-top: 24px;
 }
 
 .biographyContent {
@@ -28,4 +30,26 @@
 
 .img {
   margin: 20px;
+}
+
+.anchorHeading {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    opacity: .9;
+  }
+}
+
+.anchor {
+  padding: 0 5px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
 }

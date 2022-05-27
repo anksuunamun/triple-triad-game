@@ -3,7 +3,8 @@ import Proptypes from "prop-types";
 import Heading from "../Heading";
 import Text from "../Text";
 import style from './CharacterCard.module.scss';
-import {ReactComponent as Like } from './assets/heart.svg';
+import { ReactComponent as Like } from './assets/heart.svg';
+import { Link } from "react-router-dom";
 
 const CharacterCard = ({
   id,
@@ -13,11 +14,9 @@ const CharacterCard = ({
   humanName,
   isLike,
   onLikeClick,
-  onReadBioClick,
 }) => {
 
   const handleLikeClick = () => onLikeClick && onLikeClick(id);
-  const handleReadBioClick = () => onReadBioClick && onReadBioClick(id);
 
   return (
     <div className={style.root}>
@@ -43,11 +42,10 @@ const CharacterCard = ({
             className={cn(style.like, {[style.liked]: isLike})}
             onClick={handleLikeClick}
           >
-            <Like />
+            <Like/>
           </div>
           <div className={style.readBio}>
-            {/*<a href="/" onClick={handleCharacterSelect}>Read bio</a>*/}
-            <div onClick={handleReadBioClick}>Read bio</div>
+            <Link to={`/characters/${id}`}>Read bio</Link>
           </div>
         </div>
       </div>
@@ -67,7 +65,6 @@ CharacterCard.propTypes = {
   humanName: Proptypes.string,
   isLike: Proptypes.bool,
   onLikeClick: Proptypes.func,
-  onReadBioClick: Proptypes.func,
 };
 
 export default CharacterCard;
