@@ -7,6 +7,7 @@ const Button = ({
   theme,
   className,
   onClick,
+  type,
   ...rest
 }) => {
   return (
@@ -19,20 +20,24 @@ const Button = ({
       onClick={onClick}
       {...rest}
     >
-      {children}
+      <span>
+        {children}
+      </span>
     </button>
   )
 };
 
 Button.propTypes = {
   children: Proptypes.node,
-  theme: Proptypes.oneOf(['dark', 'white']),
+  theme: Proptypes.oneOf(['dark', 'white', 'reversePink', 'pink']),
   className: Proptypes.string,
   onClick: Proptypes.func,
+  type: Proptypes.oneOf(['button', 'submit', 'reset']),
 };
 
 Button.defaultProps = {
   theme: 'white',
+  type: 'button',
 };
 
 export default Button;

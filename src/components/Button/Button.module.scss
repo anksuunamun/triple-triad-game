@@ -1,15 +1,17 @@
 .root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 6px;
-  background-color: transparent;
-  padding: 8px 13px;
-  font-size: 20px;
-  transition: background 0.15s linear;
-
   &:hover {
     cursor: pointer;
+  }
+
+  &.dark, &.white {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: transparent;
+    padding: 8px 13px;
+    font-size: 20px;
+    transition: background 0.15s linear;
   }
 
   &.white {
@@ -27,6 +29,119 @@
 
     &:hover {
       background: #ffffff;
+    }
+  }
+
+  &.pink, &.reversePink {
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    background: 0;
+    width: 240px;
+    padding: 20px 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.3s ease;
+
+    & span {
+      position: relative;
+      z-index: 1;
+      color: #ddd;
+      transition: 0.3s ease;
+    }
+  }
+
+  &.reversePink {
+    border: 2px solid #e3e3e3;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      background: #ed2553;
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+      margin: -15px 0 0 -15px;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    &:hover, &:active, &:focus {
+      border-color: #ed2553;
+
+      & span {
+        color: #ed2553;
+      }
+    }
+
+    &:active, &:focus {
+      border-color: #ed2553;
+
+      & span {
+        color: #ffffff;
+      }
+    }
+
+    &:active {
+      &:before {
+        opacity: 1;
+        transform: scale(10);
+      }
+    }
+
+    &:focus {
+      &:before {
+        opacity: 1;
+        transform: scale(10);
+      }
+    }
+
+    /* Keyframes */
+    @-webkit-keyframes buttonFadeInUp {
+      0% {
+        bottom: 30px;
+        opacity: 0;
+      }
+    }
+
+    @keyframes buttonFadeInUp {
+      0% {
+        bottom: 30px;
+        opacity: 0;
+      }
+    }
+  }
+
+  &.pink {
+    border: 2px solid #ffffff;
+    width: 100%;
+    background: #ffffff;
+
+    & span {
+      color: #ed2553;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    &:active {
+      &:before {
+        display: none;
+      }
+    }
+
+    &:focus {
+      &:before {
+        display: none;
+      }
     }
   }
 }
