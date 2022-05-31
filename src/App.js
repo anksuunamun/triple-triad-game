@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Contacts from "./pages/Contacts";
 import Characters from "./pages/Characters";
 import NotFound from "./pages/NotFound";
+import Login from "./pages/Login";
 
 function App() {
   const {pathname, hash} = useLocation();
@@ -33,6 +34,7 @@ function App() {
         <Route path="characters/:id" element={<Biography/>}/>
         <Route path="about" element={<About/>}/>
         <Route path="contacts" element={<Contacts/>}/>
+        <Route path="login" element={<Login/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Route>
     </Routes>
