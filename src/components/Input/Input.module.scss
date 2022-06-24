@@ -1,0 +1,141 @@
+.root {
+  position: relative;
+  margin: 0 60px 50px;
+
+  input {
+    outline: none;
+    z-index: 1;
+    position: relative;
+    background: none;
+    width: 100%;
+    height: 60px;
+    border: 0;
+    font-size: 24px;
+    font-weight: 400;
+
+    &:focus ~ label {
+      transform: translate(-12%, -50%) scale(0.75);
+    }
+
+    &:focus ~ .bar:before {
+      width: 50%;
+    }
+
+    &:focus ~ .bar:after {
+      width: 50%;
+    }
+
+    &:not([value='']) ~ label{
+      transform: translate(-12%, -50%) scale(0.75);
+    }
+
+    &:valid ~ label {
+      transform: translate(-12%, -50%) scale(0.75);
+    }
+
+    /* Change Autocomplete styles in Chrome*/
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      transition: background-color 5000s ease-in-out 0s;
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 60px;
+    transition: 0.2s ease;
+  }
+
+  .bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      transition: 0.2s ease;
+      left: 50%;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      transition: 0.2s ease;
+      right: 50%;
+    }
+  }
+
+  /* Black input theme */
+  &.black {
+    color: #212121;
+
+    input {
+      &:focus ~ label {
+        color: #9d9d9d;
+      }
+
+      &:valid ~ label {
+        color: #9d9d9d;
+      }
+    }
+
+    label {
+      color: #757575;
+    }
+
+    .bar {
+      background: #757575;
+
+      &:before {
+        background: #ed2553;
+      }
+
+      &:after {
+        background: #ed2553;
+      }
+    }
+  }
+
+  /* White input theme */
+  &.white {
+    color: #ffffff;
+
+    input {
+      &:focus ~ label {
+        color: #ffffff;
+      }
+
+      &:focus ~ .bar:before {
+        background: #ffffff;
+      }
+
+      &:focus ~ .bar:after {
+        background: #ffffff;
+      }
+
+      &:valid ~ label {
+        color: #ffffff;
+      }
+    }
+
+    label {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .bar {
+      background: rgba(255, 255, 255, 0.8);
+    }
+  }
+}

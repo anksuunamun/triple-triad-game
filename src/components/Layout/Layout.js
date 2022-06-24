@@ -1,11 +1,12 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useMatch } from 'react-router-dom';
 import Header from "../Header";
 import Footer from "../Footer";
 
 const Layout = () => {
+  const match = useMatch({ path: '/login' });
   return (
     <>
-      <Header/>
+      {!match && <Header/>}
       <Outlet/>
       <Footer/>
     </>
