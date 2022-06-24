@@ -140,8 +140,10 @@ const Login = () => {
               label="Email"
               theme="white"
               className={cn(
-                {[style.visible]: mode === 'registration'},
-                {[style.hidden]: mode === 'login'},
+                {
+                  [style.visible]: mode === 'registration',
+                  [style.hidden]: mode === 'login'
+                },
               )}
             />
 
@@ -156,8 +158,10 @@ const Login = () => {
               label="Password"
               theme="white"
               className={cn(
-                {[style.visible]: mode === 'registration'},
-                {[style.hidden]: mode === 'login'},
+                {
+                  [style.visible]: mode === 'registration',
+                  [style.hidden]: mode === 'login'
+                },
               )}
             />
 
@@ -172,8 +176,10 @@ const Login = () => {
               label="Repeat Password"
               theme="white"
               className={cn(
-                {[style.visible]: mode === 'registration'},
-                {[style.hidden]: mode === 'login'},
+                {
+                  [style.visible]: mode === 'registration',
+                  [style.hidden]: mode === 'login'
+                },
               )}
             />
 
@@ -182,8 +188,10 @@ const Login = () => {
 
             <div className={cn(
               style.buttonContainer,
-              {[style.visible]: mode === 'registration'},
-              {[style.hidden]: mode === 'login'},
+              {
+                [style.visible]: mode === 'registration',
+                [style.hidden]: mode === 'login'
+              },
             )}>
               <Button type="submit" theme="pink">
                 Register
